@@ -1,0 +1,17 @@
+{
+  "name": "log",
+  "version": "0.0.1",
+  "description": "Personal Self-Tracking tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava --require babel/register"
+  },
+  "author": "Rein van der Woerd",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.1",
+    "mustache-express": "^1.2.2"
+  }
+}
