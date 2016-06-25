@@ -1,0 +1,15 @@
+<head>
+  <title>{{title}}</title>
+</head>
+
+{{title}}
+
+<form action="/save" method="post">
+  {{#entry}}
+    {{date}}
+    {{#fields}}
+    hello
+      {{.}}
+    {{/fields}}
+  {{/entry}}
+</form>

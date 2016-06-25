@@ -4,14 +4,20 @@
   "description": "Personal Self-Tracking tool",
   "main": "index.js",
   "scripts": {
-    "test": "ava --require babel/register"
+    "test": "ava --require babel/register",
+    "start": "node ."
   },
   "author": "Rein van der Woerd",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "dateformat": "^1.0.12",
     "express": "^4.14.0",
-    "mongoose": "^4.5.1",
+    "mongoose": "^4.5.2",
     "mustache-express": "^1.2.2"
+  },
+  "devDependencies": {
+    "tern-node-express": "^0.4.0",
+    "tern-node-mongoose": "^0.2.0"
   }
 }
