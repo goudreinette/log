@@ -1,4 +1,3 @@
-const {}
 module.exports = {showEntries, showNew, showEdit, saveEntry, updateEntry, deleteEntry}
 
 function showEntries (req, res)

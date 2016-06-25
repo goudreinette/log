@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+module.exports = {getAll, getById, getLastFields, insertEntry, updateById, deleteById}
 /*
 |--------------------------------------------------------------------------
 | Startup
