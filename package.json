@@ -13,6 +13,7 @@
     "body-parser": "^1.15.2",
     "dateformat": "^1.0.12",
     "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
     "mongoose": "^4.5.2",
     "mustache-express": "^1.2.2"
   },

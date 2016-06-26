@@ -1,5 +1,5 @@
 const express = require('express')
-const mustache = require('mustache-express')
+const handlebars = require('express-handlebars')
 const bodyparser = require('body-parser')
 const controller = require('./controller')
 
@@ -16,8 +16,8 @@ app.use(bodyparser.urlencoded({extended: true}))
 | Templates setup
 |--------------------------------------------------------------------------
 */
-app.engine('mustache', mustache())
-app.set('view engine', 'mustache')
+app.engine('.hbs', handlebars({extname: '.hbs'}))
+app.set('view engine', '.hbs')
 app.set('views', __dirname + '/../views')
 
 

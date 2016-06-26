@@ -3,7 +3,7 @@ module.exports = {prettyDate, prettyDates, prettyDateProperty}
 
 function prettyDate (date = new Date())
 {
-  return dateFormat(date, 'dddd, mmmm dS, yyyy h:MM')
+  return dateFormat(date, 'dddd, mmmm dS, yyyy HH:MM')
 }
 
 function prettyDates (objects)
@@ -13,5 +13,7 @@ function prettyDates (objects)
 
 function prettyDateProperty (object)
 {
-  return Object.assign({}, object, {date: prettyDate(object.date)})
+  const result = Object.assign(object, {date: prettyDate(object.date)})
+  console.log(result)
+  return result
 }

@@ -1,0 +1,25 @@
+<head>
+  <title>{{title}}</title>
+</head>
+
+{{title}}
+
+<form action="/save" method="post">
+  {{#entry}}
+
+    <section class='date'>
+      {{date}}
+    </section>
+
+    <section class='fields'>
+      {{#each fields as |value key|}}
+        <p class='field'>{{key}} - {{value}}</p>
+      {{/each}}
+    </section>
+
+  <section class='text'>
+    {{text}}
+  </section>
+
+  {{/entry}}
+</form>
