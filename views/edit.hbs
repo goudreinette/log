@@ -4,8 +4,8 @@
 
 {{title}}
 
-<form action="/save" method="post">
-  {{#entry}}
+{{#entry}}
+<form action="/save/{{_id}}" method="post">
 
     <section class='date'>
       {{date}}
@@ -17,9 +17,13 @@
       {{/each}}
     </section>
 
-  <section class='text'>
-    {{text}}
-  </section>
+    <textarea class='text'>
+      {{text}}
+    </textarea>
 
-  {{/entry}}
+  <button type="submit" name="submit">
+    Submit
+  </button>
 </form>
+
+{{/entry}}

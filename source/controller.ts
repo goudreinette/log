@@ -1,5 +1,4 @@
-module.exports = {showEntries, showNew, showEdit, saveEntry, updateEntry, deleteEntry}
-const {prettyDates, prettyDateProperty} = require('./helpers')
+import {prettyDates, prettyDateProperty} from './helpers'
 
 /*
 |--------------------------------------------------------------------------
@@ -13,47 +12,48 @@ const Entry = require('./Entry')
 | Controller
 |--------------------------------------------------------------------------
 */
-function showEntries (req, res)
+export function showEntries (req, res)
 {
   Entry.find()
     .then(entries => res.render('entries', {entries: prettyDates(entries)}))
 }
 
 
-function showNew (req, res)
+export function showNew (req, res)
 {
   res.render('edit', {title: 'New'})
 }
 
 
-function showEdit (req, res)
+export function showEdit (req, res)
 {
   Entry.findById(req.params.id)
     .then(entry => res.render('edit', {title: 'Edit', entry: prettyDateProperty(entry)}))
 }
 
 
-function saveEntry (req, res)
+export function saveEntry (req, res)
 {
   new Entry(req.body)
     .save()
     .then(console.log)
-    .then(_ => res.redirect('/entries'))
+    .then(_ => res.redirect('/'))
 }
 
 
-function updateEntry (req, res)
+export function updateEntry (req, res)
 {
   const {fields, text} = res.body
+  console.log(res.body)
   Entry.findByIdAndUpdate(req.params.id, {$set: {fields, text}})
     .then(console.log)
-    .then(_ => res.redirect('/entries'))
+    // .then(_ => res.redirect('/'))
 }
 
 
-function deleteEntry (req, res)
+export function deleteEntry (req, res)
 {
   Entry.findOneAndRemove(req.params.id)
     .then(console.log)
-    .then(_ => res.redirect('/entries'))
+    .then(_ => res.redirect('/'))
 }

@@ -1,7 +1,7 @@
-const express = require('express')
+import * as express from 'express'
 const handlebars = require('express-handlebars')
 const bodyparser = require('body-parser')
-const controller = require('./controller')
+import * as controller from './controller'
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +31,7 @@ app.get('/new', controller.showNew)
 app.get('/edit/:id', controller.showEdit)
 
 app.post('/save', controller.saveEntry)
-app.post('/save/:id', controller.saveEntry)
+app.post('/save/:id', controller.updateEntry)
 app.delete('/delete/:id', controller.deleteEntry)
 
 

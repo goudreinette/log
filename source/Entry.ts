@@ -22,4 +22,4 @@ const schema =
   text: String
 }
 
-module.exports = Entry = mongoose.model('Entry', schema)
+module.exports = mongoose.model('Entry', schema)
