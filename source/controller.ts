@@ -1,5 +1,6 @@
 import {prettyDates, prettyDateProperty} from './helpers'
 
+
 /*
 |--------------------------------------------------------------------------
 | Model

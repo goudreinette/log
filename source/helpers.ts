@@ -1,16 +1,22 @@
-const dateFormat = require('dateformat')
+import * as moment from 'moment'
 
-export function prettyDate (date = new Date())
+export function prettyDate (date: Date = new Date())
 {
-  return dateFormat(date, 'dddd, mmmm dS, yyyy HH:MM')
+  return moment(date).format('dddd, MMMM d, YYYY h:m')
 }
 
-export function prettyDates (objects)
+export function prettyDates (objects: Array<hasDate>)
 {
   return objects.map(prettyDateProperty)
 }
 
-export function prettyDateProperty (object)
+export function prettyDateProperty (object: hasDate)
 {
-  return Object.assign(object, {date: prettyDate(object.date)})
+  return Object.assign({}, object, {date: prettyDate(object.date)})
+}
+
+
+interface hasDate
+{
+  date: Date
 }
