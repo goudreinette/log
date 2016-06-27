@@ -1,0 +1,34 @@
+{{#entry}}
+<head>
+  <title>{{date}}</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/form.js"></script>
+</head>
+
+{{title}}
+
+<div class="entry">
+    <section class='date'>
+      {{date}}
+    </section>
+
+    <a class="edit" href="/edit/{{_id}}">
+      
+    </a>
+
+    <section class='fields'>
+      {{#each fields as |value key|}}
+        <div class="field">
+          <p for="{{key}}">{{key}}: {{value}}</p>
+        </div>
+      {{/each}}
+    </section>
+
+    <p class='text' type="text" name='text'>
+      {{text}}
+    </p>
+
+
+</div>
+
+{{/entry}}

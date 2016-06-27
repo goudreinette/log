@@ -1,12 +1,14 @@
 <head>
   <title>Entries</title>
+  <link rel='stylesheet' href='/style.css' />
+  <script src="/form.js"></script>
 </head>
 
 
 <ul id="entries">
   {{#entries}}
     <li class="entry">
-      {{date}}
+      <a class="date" href="/entry/{{_id}}">{{date}}</a>
       {{text}}
     </li>
   {{/entries}}

@@ -1,4 +1,4 @@
-import {prettyDates, prettyDateProperty} from './helpers'
+import {prettyDates, prettyDateProperty, combineFields} from './helpers'
 
 
 /*
@@ -19,6 +19,12 @@ export function showEntries (req, res)
     .then(entries => res.render('entries', {entries: prettyDates(entries)}))
 }
 
+export function showEntry (req, res)
+{
+  Entry.findById(req.params.id)
+    .then(entry => res.render('entry', {entry: prettyDateProperty(entry)}))
+}
+
 
 export function showNew (req, res)
 {
@@ -37,18 +43,18 @@ export function saveEntry (req, res)
 {
   new Entry(req.body)
     .save()
-    .then(console.log)
     .then(_ => res.redirect('/'))
 }
 
 
 export function updateEntry (req, res)
 {
-  const {fields, text} = res.body
-  console.log(res.body)
-  Entry.findByIdAndUpdate(req.params.id, {$set: {fields, text}})
-    .then(console.log)
-    // .then(_ => res.redirect('/'))
+  console.log('req.body:', req.body)
+  const draft = combineFields(req.body)
+  console.log('after combine: ', draft)
+  Entry.findByIdAndUpdate(req.params.id, {$set: {fields: draft.fields, text: draft.text}})
+    .then('DB:', console.log)
+    .then(_ => res.redirect('/'))
 }
 
 
