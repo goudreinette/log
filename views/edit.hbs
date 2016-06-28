@@ -15,15 +15,13 @@
     <section class='fields'>
       {{#each fields as |value key|}}
         <div class="field">
-          <label for="{{key}}">{{key}}</label>
+          <label for="{{key}}">{{key}}:</label>
           <input class='key' type="text" name="{{key}}" value="{{value}}"/>
         </div>
       {{/each}}
     </section>
 
-    <textarea class='text' type="text" name='text'>
-      {{text}}
-    </textarea>
+    <textarea class='text' type="text" name='text'>{{text}}</textarea>
 
   <button type="submit" type="text">
     Submit

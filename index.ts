@@ -21,7 +21,6 @@ app.engine('.hbs', handlebars({extname: '.hbs'}))
 app.set('view engine', '.hbs')
 app.set('views', join(__dirname + '/views'))
 app.use(express.static(join(__dirname + '/static')))
-console.log(join(__dirname + '/static'))
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +37,4 @@ app.post('/save/:id', controller.updateEntry)
 app.delete('/delete/:id', controller.deleteEntry)
 
 
-app.listen(3100, () => console.log('listening on port 3000'))
+app.listen(3100, () => console.log('listening on port 3100'))

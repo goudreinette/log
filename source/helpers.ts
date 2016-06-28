@@ -1,4 +1,5 @@
 import * as moment from 'moment'
+import {entry, hasDate, formValues} from './interfaces'
 
 export function prettyDate (date: Date = new Date())
 {
@@ -13,7 +14,6 @@ export function prettyDates (objects: Array<hasDate>)
 export function prettyDateProperty (object: entry)
 {
   const result =  {_id: object._id, text: object.text, fields: object.fields, date: prettyDate(object.date)}
-  console.log(result)
   return result
 }
 
@@ -25,7 +25,9 @@ export function prettyDateProperty (object: entry)
  */
 export function combineFields (values : formValues)
 {
-  return {text: values.text, fields: withoutText(values)}
+  const result = {text: values.text, fields: withoutText(values)}
+  console.log(result)
+  return result
 }
 
 /**
@@ -34,29 +36,9 @@ export function combineFields (values : formValues)
  * @param  {FormData}  object object to filter
  * @return {[object]}         without text property
  */
-export function withoutText (object: Object)
+export function withoutText (object: formValues)
 {
-  const filtered = Object.keys(object).filter(key => key != 'text')
-  return Object.assign({}, filtered.map(key => ({[key]: object[key]})))
-}
-
-/**
- * Interfaces
- */
-interface hasDate
-{
-  date: Date
-}
-
-interface entry
-{
-  _id: String
-  date: Date
-  fields: Object,
-  text: String
-}
-
-interface formValues
-{
-  text: String
+  const copy = object
+  if (copy.text) delete copy.text
+  return copy
 }
