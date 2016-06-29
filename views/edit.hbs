@@ -13,14 +13,13 @@
     </section>
 
     <section class='fields'>
-      <div id="add-field"></div>
       {{#each fields as |value key|}}
         <div class="field">
-          <label for="{{key}}">{{key}}:</label>
-          <input class='key' type="text" name="{{key}}" value="{{value}}"/>
+          <input class="key" value="{{key}}">
+          <input class='value' type="text" name="{{key}}" value="{{value}}"/>
         </div>
       {{/each}}
-
+      <div id="add-field"></div>
     </section>
 
     <textarea class='text' type="text" name='text'>{{text}}</textarea>

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "ava --require babel/register",
+    "mongo": "mongod --dbpath data",
     "start": "nodemon --exec 'ts-node .' -w *.ts"
   },
   "author": "Rein van der Woerd",

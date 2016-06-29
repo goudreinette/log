@@ -13,10 +13,10 @@ const Entry = require('./Entry')
 | Controller
 |--------------------------------------------------------------------------
 */
-export function showEntries (req, res)
+export async function showEntries (req, res)
 {
-  Entry.find()
-    .then(entries => res.render('entries', {entries: prettyDates(entries)}))
+  const entries = await Entry.find()
+  res.render('entries', {entries: prettyDates(entries)})
 }
 
 export function showEntry (req, res)
