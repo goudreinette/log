@@ -14,10 +14,7 @@
 
     <section class='fields'>
       {{#each fields as |value key|}}
-        <div class="field">
-          <input class="key" value="{{key}}">
-          <input class='value' type="text" name="{{key}}" value="{{value}}"/>
-        </div>
+        <div class="field"><input class="key" value="{{key}}"/><input class="value" type="text" name="{{key}}" value="{{value}}"/></div>
       {{/each}}
       <div id="add-field"></div>
     </section>
