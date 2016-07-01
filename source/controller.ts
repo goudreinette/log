@@ -28,7 +28,15 @@ export async function showEntry (req, res)
 
 export async function showNew (req, res)
 {
-  res.render('edit', {title: 'New', entry: {date: prettyDate(new Date())}})
+  const lastEntry = await Entry.find().sort('-date').limit(1).select('fields').exec()
+  const entry =
+  {
+    fields: lastEntry[0].fields,
+    date: prettyDate(new Date())
+  }
+  console.log(lastEntry)
+  console.log(entry)
+  res.render('edit', {title: 'New', entry})
 }
 
 

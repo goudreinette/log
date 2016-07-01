@@ -19,7 +19,7 @@ class Fields
   {
     this.$add           = document.querySelector('#add-field')
     this.$container     = document.querySelector('.fields')
-    this.$deleteButtons = Array.from(document.querySelectorAll('.field button.delete'))
+    this.$deleteButtons = Array.from(document.querySelectorAll('.field .delete'))
     this.$fields        = Array.from(document.querySelectorAll('.field'))
   }
 
@@ -41,7 +41,7 @@ class Fields
 
   handleNewClick ()
   {
-    const html     = `<div class="field"><input class="key" placeholder="key"value=""/><input class="value" placeholder="value" type="text" name="" value=""/></div>`
+    const html     = `<div class="field"><input class="key" placeholder="key"value=""/><input class="value" placeholder="value" type="text" name="" value=""/><a class="delete">x</a></div>`
     const newField = document.createElement('div')
 
     newField.innerHTML = html
@@ -50,9 +50,10 @@ class Fields
     this.addEventListeners()
   }
 
-  handleDeleteClick ()
+  handleDeleteClick (event)
   {
-
+    const $field = event.target.parentNode
+    $field.remove()
   }
 }
 
