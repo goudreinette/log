@@ -18,7 +18,8 @@
     <section class='fields'>
       {{#each fields as |value key|}}
         <div class="field">
-          <p for="{{key}}">{{key}}: {{value}}</p>
+          <p for="{{key}}" class="key">{{key}}</p>
+          <p class="value">{{value}}</p>
         </div>
       {{/each}}
     </section>

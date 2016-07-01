@@ -31,10 +31,11 @@ app.get('/', controller.showEntries)
 app.get('/entry/:id', controller.showEntry)
 app.get('/new', controller.showNew)
 app.get('/edit/:id', controller.showEdit)
+app.get('/analyze', controller.showAnalyze)
 
 app.post('/save', controller.saveEntry)
 app.post('/save/:id', controller.updateEntry)
-app.delete('/delete/:id', controller.deleteEntry)
+app.get('/delete/:id', controller.deleteEntry)
 
 
 app.listen(3100, () => console.log('listening on port 3100'))

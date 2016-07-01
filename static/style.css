@@ -59,11 +59,30 @@ body > .entry {
   cursor: pointer;
 }
 
+/**
+ * Analyze
+ */
+a#analyze {
+  text-align: center;
+  height: 40px;
+  display: block;
+  text-decoration: none;
+  font-size: 20px;
+  opacity: 0.7;
+}
+
+a#analyze:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
 
 /**
  * Fields
  */
-
+.entry {
+  position: relative;
+}
 .entry .fields {
   padding: 10px 0;
   border-width: 1px 0px;
@@ -83,17 +102,46 @@ body > .entry {
 }
 
 .entry .fields .field {
-  margin: 15px 0;
+  height: 30px;
+}
+
+.entry .fields .field .delete{
+  float: right;
 }
 
 .entry .fields #add-field {
+  width: 100%;
   height: 30px;
   background-color: rgba(0, 0, 0, 0.05);
+  float: left;
+  margin: 16px 0;
 }
 
 .entry .fields #add-field:hover {
   background-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
+}
+
+.entry .field p, .entry .field input {
+  min-width: 150px;
+  line-height: 30px;
+}
+
+.entry .field p {
+  display: inline-block;
+  margin: 0;
+}
+
+.entry .delete, .entry .edit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-decoration: none;
+  padding: 15px;
+}
+
+.entry .delete:hover, .entry .edit:hover {
+  text-decoration: underline;
 }
 
 /**

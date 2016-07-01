@@ -65,3 +65,8 @@ export async function deleteEntry (req, res)
   await Entry.findOneAndRemove(req.params.id)
   res.redirect('/')
 }
+
+export async function showAnalyze (req, res) {
+  const entries = await Entry.find()
+  res.render('analyze', {entries})
+}
