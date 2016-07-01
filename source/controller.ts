@@ -34,8 +34,6 @@ export async function showNew (req, res)
     fields: lastEntry[0].fields,
     date: prettyDate(new Date())
   }
-  console.log(lastEntry)
-  console.log(entry)
   res.render('edit', {title: 'New', entry})
 }
 
