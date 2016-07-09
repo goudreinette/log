@@ -4,22 +4,27 @@
   "description": "Personal Self-Tracking tool",
   "main": "index.js",
   "scripts": {
-    "test": "ava --require babel/register",
+    "test": "ava --require babel-register -w",
     "mongo": "mongod --dbpath data",
-    "start": "nodemon --exec 'ts-node .' -w *.ts"
+    "start": "babel-node ."
   },
   "author": "Rein van der Woerd",
   "license": "ISC",
+  "babel": {
+    "presets": ["es2015", "stage-2", "react"]
+  },
   "dependencies": {
     "body-parser": "^1.15.2",
-    "dateformat": "^1.0.12",
     "express": "^4.14.0",
-    "express-handlebars": "^3.0.0",
     "moment": "^2.13.0",
-    "mongoose": "^4.5.2",
-    "mustache-express": "^1.2.2"
+    "mongoose": "^4.5.2"
   },
   "devDependencies": {
+    "ava": "^0.15.2",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-2": "^6.11.0",
+    "supertest": "^1.2.0",
     "tern-node-express": "^0.4.0",
     "tern-node-mongoose": "^0.2.0"
   }
